@@ -1,0 +1,11 @@
+/** Project Class **/
+
+public class Project{
+
+    public int projectId
+    public String projectName
+    public String description
+    public List<Task> taskList;
+    public String projectOwner;
+
+};
