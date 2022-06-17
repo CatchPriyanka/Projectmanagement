@@ -8,4 +8,56 @@ public class Project{
     public List<Task> taskList;
     public String projectOwner;
 
+    public getProjectByName(String projectName);
+    public getAllProjects();
+
 };
+
+
+
+public class Task{
+        public int taskId;
+        public String title;
+        public String Description;
+        public List<Comment> comments;
+        public User createdBy;
+        public User assignedTo;
+        public LocalDateTime createDateTime;
+        public LocalDateTime updateTime;
+        public List<Comment> comments
+
+};
+
+public class Story extends TaskType{
+
+        public int estimatedStoryPoints;
+        public Status status;
+
+  };
+
+public  enum Status{
+        TODO,INPROGRESS,DONE,BLOCKED,ASSINGED
+
+  };
+
+
+public class Bug extends TaskType{
+
+    public Priority priority;
+    public Status status
+
+}
+public enum Priority{
+        CRITICAL,MAJOR,MINOR
+}
+
+public class Comment{
+
+    public int commentId;
+    public String description;
+}
+
+
+
+
+
