@@ -1,3 +1,11 @@
+public class ProjectManagement{
+
+public List<Project> getAllProjects();
+public List<Project> getProjectByOwner();
+public Project getProjectByName(String projectName);
+public List<Task> getTasksByProject(Project project)
+}
+
 /** Project Class **/
 
 public class Project{
@@ -6,8 +14,6 @@ public class Project{
     public String description
     public List<Task> taskList;
     public String projectOwner;
-    public getProjectByName(String projectName);
-    public getAllProjects();
     public int estimatedDuration;
 };
 
@@ -22,7 +28,7 @@ public class Task{
         public User assignedTo;
         public LocalDateTime createDateTime;
         public LocalDateTime updateTime;
-
+        public Project project;
         public Task assignTask(User user);
 
 };
