@@ -1,21 +1,19 @@
 /** Project Class **/
 
 public class Project{
-
     public int projectId
     public String projectName
     public String description
     public List<Task> taskList;
     public String projectOwner;
-
     public getProjectByName(String projectName);
     public getAllProjects();
-
+    public int estimatedDuration;
 };
 
 
-
 public class Task{
+
         public int taskId;
         public String title;
         public String Description;
@@ -24,7 +22,8 @@ public class Task{
         public User assignedTo;
         public LocalDateTime createDateTime;
         public LocalDateTime updateTime;
-        public List<Comment> comments
+
+        public Task assignTask(User user);
 
 };
 
@@ -37,25 +36,66 @@ public class Story extends TaskType{
 
 public  enum Status{
         TODO,INPROGRESS,DONE,BLOCKED,ASSINGED
-
-  };
-
+   };
 
 public class Bug extends TaskType{
-
-    public Priority priority;
-    public Status status
-
+       public Priority priority;
+       public Status status
 }
+
 public enum Priority{
-        CRITICAL,MAJOR,MINOR
+       CRITICAL,MAJOR,MINOR
 }
 
 public class Comment{
-
     public int commentId;
     public String description;
 }
+
+public class User {
+    public String userName;
+    public String email;
+    public String firstName;
+    pubic String lastname;
+    public String email;
+    public String password;
+    public boolean isActive;
+
+
+    }
+
+public class Admin extends User{
+    public User addUser(User user);
+    public User updateUser(User user);
+    public User deactivateUser(String userName);
+
+    }
+
+public Class ProjectOwner extends User{
+
+    public createStories(Story story);
+    public createIssue(Bug issue);
+    public ChangeAssignee(User user);
+
+}
+
+public Class SystemUser extends ProjectOwner{
+
+     public changeStatus(Status status);
+
+}
+
+public Class SearchTask{
+        public Task searchTaskById(int taskId);
+        public List<Task> searchTaskByUserAssigned(String userName);
+        public List<Task> searchTaskByStatus(Status status);
+        public List<Task> searchTaskByUserReported(String userName);
+        public List<Task> searchTaskBycreationDate(Date taskDate);
+}
+
+
+
+
 
 
 
