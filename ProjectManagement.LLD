@@ -21,6 +21,7 @@ public class Project{
 public class Task{
 
         public int taskId;
+        public TaskType taskType;
         public String title;
         public String Description;
         public List<Comment> comments;
