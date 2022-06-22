@@ -32,8 +32,12 @@ public class Task{
         public Task assignTask(User user);
 
 };
+public enum TaskType{
 
-public class Story extends TaskType{
+ STORY,BUG
+}
+
+public class TaskStory extends Task{
 
         public int estimatedStoryPoints;
         public Status status;
@@ -44,7 +48,7 @@ public  enum Status{
         TODO,INPROGRESS,DONE,BLOCKED,ASSINGED
    };
 
-public class Bug extends TaskType{
+public class TaskBug extends Task{
        public Priority priority;
        public Status status
 }
